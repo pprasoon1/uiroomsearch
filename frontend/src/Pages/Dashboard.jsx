@@ -14,8 +14,8 @@ export default function Dashboard({ searchCriteria }) {
     try {
       const response = await axios.get('https://rs-backend.vercel.app/users', {
         params: {
-          desiredFloor,
-          desiredHostelBlock,
+          desiredFloor: desiredFloor.toLowerCase(),
+          desiredHostelBlock: desiredHostelBlock.toLowerCase(),
         },
       });
       setUsers(response.data);

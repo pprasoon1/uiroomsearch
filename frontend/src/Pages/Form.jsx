@@ -40,8 +40,15 @@ export default function Form({ onSearch }) {
     }
 
     try {
+      // Convert relevant fields to lowercase
+      const lowerCaseFormData = {
+        ...formData,
+        currentHostelBlock: formData.currentHostelBlock.toLowerCase(),
+        desiredHostelBlock: formData.desiredHostelBlock.toLowerCase(),
+      };
+
       // No toast notifications
-      await axios.post('https://rs-backend.vercel.app/submit', formData);
+      await axios.post('https://rs-backend.vercel.app/submit', lowerCaseFormData);
 
       // Clear form data after successful submission
       setFormData({
@@ -58,7 +65,7 @@ export default function Form({ onSearch }) {
       if (onSearch) {
         onSearch({
           desiredFloor: formData.desiredFloor,
-          desiredHostelBlock: formData.desiredHostelBlock
+          desiredHostelBlock: formData.desiredHostelBlock.toLowerCase()
         });
       }
     } catch (error) {
