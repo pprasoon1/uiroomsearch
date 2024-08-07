@@ -33,7 +33,7 @@ export default function Form({ onSearch }) {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior
 
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
@@ -49,7 +49,7 @@ export default function Form({ onSearch }) {
       await axios.post('https://rs-backend.vercel.app/submit', formData);
       toast.dismiss();
       toast.success('Form submitted successfully', { autoClose: 3000 });
-      
+
       // Clear form data after successful submission
       setFormData({
         email: '',
@@ -60,7 +60,7 @@ export default function Form({ onSearch }) {
         desiredHostelBlock: '',
         desiredFloor: ''
       });
-      
+
       // Call the onSearch callback if provided
       if (onSearch) {
         onSearch({
