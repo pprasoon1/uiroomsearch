@@ -40,9 +40,9 @@ export default function Dashboard({ searchCriteria }) {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-3xl font-bold text-blue-950 mb-4">Dashboard</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4">Dashboard</h2>
       <div className="mb-4">
-        <label htmlFor="desiredFloor" className="block text-2xl font-bold leading-8 text-gray-900">
+        <label htmlFor="desiredFloor" className="block text-xl md:text-2xl font-bold leading-8 text-gray-900">
           Desired Floor
         </label>
         <input
@@ -55,7 +55,7 @@ export default function Dashboard({ searchCriteria }) {
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="desiredHostelBlock" className="block text-2xl font-bold leading-8 text-gray-900">
+        <label htmlFor="desiredHostelBlock" className="block text-xl md:text-2xl font-bold leading-8 text-gray-900">
           Desired Hostel Block
         </label>
         <input
@@ -85,20 +85,20 @@ export default function Dashboard({ searchCriteria }) {
         {users.length > 0 ? (
           users.map((user) => (
             <div key={user._id} className="p-4 border rounded-md">
-              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Name: </strong> {user.name}</p>
-              <p className='text-xl text-zinc-950 font-mono font-bold'>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'><strong>Name: </strong> {user.name}</p>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'>
                 <strong>Email: </strong> 
                 <a href={`mailto:${user.email}`} className="text-red-900 underline">{user.email}</a>
               </p>
-              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Contact: </strong> {user.phoneNo}</p>
-              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Current Hostel Block: </strong> {user.currentHostelBlock}</p>
-              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Current Floor: </strong> {user.currentFloor}</p>
-              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Desired Hostel Block: </strong> {user.desiredHostelBlock}</p>
-              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Desired Floor: </strong> {user.desiredFloor}</p>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'><strong>Contact: </strong> {user.phoneNo}</p>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'><strong>Current Hostel Block: </strong> {user.currentHostelBlock}</p>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'><strong>Current Floor: </strong> {user.currentFloor}</p>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'><strong>Desired Hostel Block: </strong> {user.desiredHostelBlock}</p>
+              <p className='text-base md:text-xl text-zinc-950 font-mono font-bold'><strong>Desired Floor: </strong> {user.desiredFloor}</p>
             </div>
           ))
         ) : (
-          <p className="text-xl text-red-500 font-bold font-mono">No users found</p>
+          <p className="text-base md:text-xl text-red-500 font-bold font-mono">No users found</p>
         )}
       </div>
     </div>

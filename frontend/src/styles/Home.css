@@ -1,9 +1,39 @@
+/* src/styles/Home.css */
 .text-animation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem; /* Adjust as needed */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+  .text-animation span {
+    font-size: 2rem; /* Adjust as needed */
   }
+}
+
+/* src/styles/Proceed.css */
+@media (max-width: 768px) {
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .space-y-12 > * + * {
+    margin-top: 3rem; /* Adjust as needed */
+  }
+}
+
+
+  .text-8xl {
+    font-size: 4rem; /* Adjust as needed */
+  }
+
+  button {
+    font-size: 1rem; /* Adjust as needed */
+    padding: 1rem 2rem; /* Adjust as needed */
+  }
+
+
   
   .animate-word {
     opacity: 0;

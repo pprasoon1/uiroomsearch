@@ -53,21 +53,21 @@ export default function Form({ onSearch }) {
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mx-auto w-full max-w-sm">
         <img
           alt="RoomSearch.com"
           src="newicon.png"
           className="mx-auto h-24 w-auto"
         />
-        <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-blue-950">
+        <h2 className="mt-10 text-center text-2xl md:text-3xl font-bold leading-9 tracking-tight text-blue-950">
           Fill Your Details
         </h2>
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-10 mx-auto w-full max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="email" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Bennett email
             </label>
             <div className="mt-2">
@@ -78,13 +78,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="name" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="name" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Name
             </label>
             <div className="mt-2">
@@ -95,13 +95,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="phoneNo" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="phoneNo" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Phone No
             </label>
             <div className="mt-2">
@@ -112,13 +112,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.phoneNo}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="currentHostelBlock" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="currentHostelBlock" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Current Hostel Block
             </label>
             <div className="mt-2">
@@ -129,13 +129,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.currentHostelBlock}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="currentFloor" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="currentFloor" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Current Floor
             </label>
             <div className="mt-2">
@@ -146,13 +146,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.currentFloor}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="desiredHostelBlock" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="desiredHostelBlock" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Desired Hostel Block
             </label>
             <div className="mt-2">
@@ -163,13 +163,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.desiredHostelBlock}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-bold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="desiredFloor" className="block text-2xl leading-6 text-gray-900">
+            <label htmlFor="desiredFloor" className="block text-xl md:text-2xl leading-6 text-gray-900">
               Desired Floor
             </label>
             <div className="mt-2">
@@ -180,13 +180,13 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.desiredFloor}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-base md:text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
 
           {errorMessage && (
-            <div className="text-red-600 font-bold font-mono">
+            <div className="text-red-600 font-bold font-mono text-base md:text-lg">
               {errorMessage}
             </div>
           )}
