@@ -65,7 +65,7 @@ export default function Form({ onSearch }) {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6 ">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-2xl leading-6 text-gray-900">
               Bennett email
@@ -78,7 +78,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.phoneNo}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.currentHostelBlock}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.currentFloor}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.desiredHostelBlock}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-bold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-bold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function Form({ onSearch }) {
                 required
                 value={formData.desiredFloor}
                 onChange={handleChange}
-                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+                className="block w-full rounded-md border-0 py-2 px-3 text-black text-xl font-mono font-semibold shadow-sm ring-1 ring-inset ring-zinc-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 bg-transparent"
               />
             </div>
           </div>

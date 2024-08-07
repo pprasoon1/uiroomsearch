@@ -84,21 +84,21 @@ export default function Dashboard({ searchCriteria }) {
       <div className="overflow-y-auto max-h-96 border rounded-md p-4 space-y-4">
         {users.length > 0 ? (
           users.map((user) => (
-            <div key={user._id} className="p-4 border rounded-md ">
-              <p className='text-zinc-950 font-mono font-bold '><strong>Name: </strong> {user.name}</p>
-              <p className='text-zinc-950 font-mono font-bold '>
+            <div key={user._id} className="p-4 border rounded-md">
+              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Name: </strong> {user.name}</p>
+              <p className='text-xl text-zinc-950 font-mono font-bold'>
                 <strong>Email: </strong> 
-                <a href={`mailto:${user.email}`} className="text-blue-500 underline">{user.email}</a>
+                <a href={`mailto:${user.email}`} className="text-red-900 underline">{user.email}</a>
               </p>
-              <p className='text-zinc-950 font-mono font-bold '><strong>Contact: </strong> {user.phoneNo}</p>
-              <p className='text-zinc-950 font-mono font-bold '><strong>Current Hostel Block: </strong> {user.currentHostelBlock}</p>
-              <p className='text-zinc-950 font-mono font-bold '><strong>Current Floor: </strong> {user.currentFloor}</p>
-              <p className='text-zinc-950 font-mono font-bold '><strong>Desired Hostel Block: </strong> {user.desiredHostelBlock}</p>
-              <p className='text-zinc-950 font-mono font-bold '><strong>Desired Floor: </strong> {user.desiredFloor}</p>
+              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Contact: </strong> {user.phoneNo}</p>
+              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Current Hostel Block: </strong> {user.currentHostelBlock}</p>
+              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Current Floor: </strong> {user.currentFloor}</p>
+              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Desired Hostel Block: </strong> {user.desiredHostelBlock}</p>
+              <p className='text-xl text-zinc-950 font-mono font-bold'><strong>Desired Floor: </strong> {user.desiredFloor}</p>
             </div>
           ))
         ) : (
-          <p className="text-red-600 font-bold font-mono">No users found</p>
+          <p className="text-xl text-red-500 font-bold font-mono">No users found</p>
         )}
       </div>
     </div>
