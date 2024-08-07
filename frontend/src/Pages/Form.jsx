@@ -16,48 +16,65 @@ export default function Form({ onSearch }) {
 
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Function to validate the form
+  // Validate form data
   const validateForm = () => {
     const newErrors = {};
     if (!formData.email.match(/^[a-zA-Z0-9._%+-]+@bennett\.edu\.in$/)) {
       newErrors.email = 'Email must end with @bennett.edu.in';
     }
-    if (!formData.phoneNo.match(/^\d{10}$/)) {
-      newErrors.phoneNo = 'Phone number must be 10 digits';
-    }
     return newErrors;
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevents default form submission
+
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
-      setErrorMessage(errors.email || errors.phoneNo);
+      setErrorMessage(errors.email);
       toast.dismiss();
-      toast.error(errors.email || errors.phoneNo);
+      toast.error(errors.email);
       return;
     }
+
     try {
       toast.dismiss();
       toast.info('Submitting form...');
       await axios.post('https://rs-backend.vercel.app/submit', formData);
       toast.dismiss();
       toast.success('Form submitted successfully');
-      onSearch({
-        desiredFloor: formData.desiredFloor,
-        desiredHostelBlock: formData.desiredHostelBlock
+      // Clear form data after successful submission
+      setFormData({
+        email: '',
+        name: '',
+        phoneNo: '',
+        currentHostelBlock: '',
+        currentFloor: '',
+        desiredHostelBlock: '',
+        desiredFloor: ''
       });
+      // Call the onSearch callback if provided
+      if (onSearch) {
+        onSearch({
+          desiredFloor: formData.desiredFloor,
+          desiredHostelBlock: formData.desiredHostelBlock
+        });
+      }
     } catch (error) {
       toast.dismiss();
-      const errorMessage = error.response?.data?.message || 'There was an error submitting the form!';
-      setErrorMessage(errorMessage);
-      toast.error(errorMessage);
-      console.error('There was an error submitting the form!', error);
+      if (error.response && error.response.status === 400) {
+        setErrorMessage(error.response.data.message);
+        toast.error(error.response.data.message);
+      } else {
+        toast.error('There was an error submitting the form!');
+        console.error('There was an error submitting the form!', error);
+      }
     }
   };
 
@@ -79,7 +96,7 @@ export default function Form({ onSearch }) {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-xl md:text-2xl leading-6 text-gray-900">
-              Bennett email
+              Bennett Email
             </label>
             <div className="mt-2">
               <input
@@ -119,7 +136,7 @@ export default function Form({ onSearch }) {
               <input
                 id="phoneNo"
                 name="phoneNo"
-                type="text"
+                type="number"
                 required
                 value={formData.phoneNo}
                 onChange={handleChange}
