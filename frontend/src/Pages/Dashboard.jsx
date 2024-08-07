@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Dashboard({ searchCriteria }) {
   const [desiredFloor, setDesiredFloor] = useState('');
@@ -7,16 +9,22 @@ export default function Dashboard({ searchCriteria }) {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
+    toast.dismiss();
+    toast.info('Loading...');
     try {
-      const response = await axios.get('https://rsbackend-3.onrender.com/users', {
+      const response = await axios.get('https://rs-backend.vercel.app/users', {
         params: {
           desiredFloor,
           desiredHostelBlock,
         },
       });
       setUsers(response.data);
-      console.log('Fetched users:', response.data);  // Debug log
+      toast.dismiss();
+      toast.success('Data loaded successfully!');
+      console.log('Fetched users:', response.data); // Debug log
     } catch (error) {
+      toast.dismiss();
+      toast.error('There was an error fetching the users!');
       console.error('There was an error fetching the users!', error);
     }
   };
@@ -30,7 +38,7 @@ export default function Dashboard({ searchCriteria }) {
   }, [searchCriteria]);
 
   const handleSearchClick = () => {
-    console.log('Search Clicked:', { desiredFloor, desiredHostelBlock });  // Debug log
+    console.log('Search Clicked:', { desiredFloor, desiredHostelBlock }); // Debug log
     fetchUsers();
   };
 
@@ -42,6 +50,7 @@ export default function Dashboard({ searchCriteria }) {
 
   return (
     <div className="container mx-auto p-4">
+      <ToastContainer />
       <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4">Dashboard</h2>
       <div className="mb-4">
         <label htmlFor="desiredFloor" className="block text-xl md:text-2xl font-bold leading-8 text-gray-900">
