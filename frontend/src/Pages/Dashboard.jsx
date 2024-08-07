@@ -15,6 +15,7 @@ export default function Dashboard({ searchCriteria }) {
         },
       });
       setUsers(response.data);
+      console.log('Fetched users:', response.data);  // Debug log
     } catch (error) {
       console.error('There was an error fetching the users!', error);
     }
@@ -29,6 +30,7 @@ export default function Dashboard({ searchCriteria }) {
   }, [searchCriteria]);
 
   const handleSearchClick = () => {
+    console.log('Search Clicked:', { desiredFloor, desiredHostelBlock });  // Debug log
     fetchUsers();
   };
 
