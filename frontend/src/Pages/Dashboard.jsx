@@ -21,7 +21,6 @@ export default function Dashboard({ searchCriteria }) {
   };
 
   useEffect(() => {
-    // Fetch users when component mounts or searchCriteria changes
     if (searchCriteria) {
       setDesiredFloor(searchCriteria.desiredFloor);
       setDesiredHostelBlock(searchCriteria.desiredHostelBlock);
@@ -85,9 +84,12 @@ export default function Dashboard({ searchCriteria }) {
       <div className="overflow-y-auto max-h-96 border rounded-md p-4 space-y-4">
         {users.length > 0 ? (
           users.map((user) => (
-            <div key={user._id} className="p-4 border rounded-md">
+            <div key={user._id} className="p-4 border rounded-md ">
               <p className='text-zinc-950 font-mono font-bold '><strong>Name: </strong> {user.name}</p>
-              <p className='text-zinc-950 font-mono font-bold '><strong>Email: </strong> {user.email}</p>
+              <p className='text-zinc-950 font-mono font-bold '>
+                <strong>Email: </strong> 
+                <a href={`mailto:${user.email}`} className="text-blue-500 underline">{user.email}</a>
+              </p>
               <p className='text-zinc-950 font-mono font-bold '><strong>Contact: </strong> {user.phoneNo}</p>
               <p className='text-zinc-950 font-mono font-bold '><strong>Current Hostel Block: </strong> {user.currentHostelBlock}</p>
               <p className='text-zinc-950 font-mono font-bold '><strong>Current Floor: </strong> {user.currentFloor}</p>
@@ -96,7 +98,7 @@ export default function Dashboard({ searchCriteria }) {
             </div>
           ))
         ) : (
-          <p className="text-gray-500">No users found</p>
+          <p className="text-red-600 font-bold font-mono">No users found</p>
         )}
       </div>
     </div>

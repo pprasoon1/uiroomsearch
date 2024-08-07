@@ -19,12 +19,6 @@ export default function Form({ onSearch }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    const upperCaseValue = value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-    setFormData({ ...formData, [name]: upperCaseValue });
-  };
-
   // Function to validate the form
   const validateForm = () => {
     const newErrors = {};
@@ -72,30 +66,131 @@ export default function Form({ onSearch }) {
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6 ">
-          {['email', 'name', 'phoneNo', 'currentHostelBlock', 'currentFloor', 'desiredHostelBlock', 'desiredFloor'].map((field) => (
-            <div key={field}>
-              <label htmlFor={field} className="block text-sm  leading-6 text-gray-900">
-                {field.split(/(?=[A-Z])/).join(' ')}
-              </label>
-              <div className="mt-2">
-                <input
-                  id={field}
-                  name={field}
-                  type={field === 'email' ? 'email' : 'text'}
-                  required
-                  value={formData[field]}
-                  onChange={handleChange}
-                  onInput={['currentHostelBlock', 'currentFloor', 'desiredHostelBlock', 'desiredFloor'].includes(field) ? handleInput : undefined}
-                  className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
-                />
-              </div>
+          <div>
+            <label htmlFor="email" className="block text-2xl leading-6 text-gray-900">
+              Bennett email
+            </label>
+            <div className="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
             </div>
-          ))}
+          </div>
+
+          <div>
+            <label htmlFor="name" className="block text-2xl leading-6 text-gray-900">
+              Name
+            </label>
+            <div className="mt-2">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="phoneNo" className="block text-2xl leading-6 text-gray-900">
+              Phone No
+            </label>
+            <div className="mt-2">
+              <input
+                id="phoneNo"
+                name="phoneNo"
+                type="number"
+                required
+                value={formData.phoneNo}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="currentHostelBlock" className="block text-2xl leading-6 text-gray-900">
+              Current Hostel Block
+            </label>
+            <div className="mt-2">
+              <input
+                id="currentHostelBlock"
+                name="currentHostelBlock"
+                type="text"
+                required
+                value={formData.currentHostelBlock}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="currentFloor" className="block text-2xl leading-6 text-gray-900">
+              Current Floor
+            </label>
+            <div className="mt-2">
+              <input
+                id="currentFloor"
+                name="currentFloor"
+                type="number"
+                required
+                value={formData.currentFloor}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="desiredHostelBlock" className="block text-2xl leading-6 text-gray-900">
+              Desired Hostel Block
+            </label>
+            <div className="mt-2">
+              <input
+                id="desiredHostelBlock"
+                name="desiredHostelBlock"
+                type="text"
+                required
+                value={formData.desiredHostelBlock}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-bold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="desiredFloor" className="block text-2xl leading-6 text-gray-900">
+              Desired Floor
+            </label>
+            <div className="mt-2">
+              <input
+                id="desiredFloor"
+                name="desiredFloor"
+                type="number"
+                required
+                value={formData.desiredFloor}
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 px-3 text-black font-mono font-semibold shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
+              />
+            </div>
+          </div>
+
           {errorMessage && (
             <div className="text-red-600 font-bold font-mono">
               {errorMessage}
             </div>
           )}
+
           <div>
             <button
               type="submit"
