@@ -33,22 +33,23 @@ export default function Form({ onSearch }) {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevents default form submission
+    e.preventDefault();
 
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
       setErrorMessage(errors.email);
       toast.dismiss();
-      toast.error(errors.email);
+      toast.error(errors.email, { autoClose: 3000 });
       return;
     }
 
     try {
       toast.dismiss();
-      toast.info('Submitting form...');
+      toast.info('Submitting form...', { autoClose: 2000 });
       await axios.post('https://rs-backend.vercel.app/submit', formData);
       toast.dismiss();
-      toast.success('Form submitted successfully');
+      toast.success('Form submitted successfully', { autoClose: 3000 });
+      
       // Clear form data after successful submission
       setFormData({
         email: '',
@@ -59,6 +60,7 @@ export default function Form({ onSearch }) {
         desiredHostelBlock: '',
         desiredFloor: ''
       });
+      
       // Call the onSearch callback if provided
       if (onSearch) {
         onSearch({
@@ -70,9 +72,9 @@ export default function Form({ onSearch }) {
       toast.dismiss();
       if (error.response && error.response.status === 400) {
         setErrorMessage(error.response.data.message);
-        toast.error(error.response.data.message);
+        toast.error(error.response.data.message, { autoClose: 3000 });
       } else {
-        toast.error('There was an error submitting the form!');
+        toast.error('There was an error submitting the form!', { autoClose: 3000 });
         console.error('There was an error submitting the form!', error);
       }
     }
@@ -80,7 +82,7 @@ export default function Form({ onSearch }) {
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <ToastContainer />
+      <ToastContainer autoClose={3000} />
       <div className="mx-auto w-full max-w-sm">
         <img
           alt="RoomSearch.com"

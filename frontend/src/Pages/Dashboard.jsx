@@ -10,7 +10,7 @@ export default function Dashboard({ searchCriteria }) {
 
   const fetchUsers = async () => {
     toast.dismiss();
-    toast.info('Loading...');
+    toast.info('Loading...', { autoClose: 2000 });
     try {
       const response = await axios.get('https://rs-backend.vercel.app/users', {
         params: {
@@ -20,11 +20,11 @@ export default function Dashboard({ searchCriteria }) {
       });
       setUsers(response.data);
       toast.dismiss();
-      toast.success('Data loaded successfully!');
+      toast.success('Data loaded successfully!', { autoClose: 3000 });
       console.log('Fetched users:', response.data); // Debug log
     } catch (error) {
       toast.dismiss();
-      toast.error('There was an error fetching the users!');
+      toast.error('There was an error fetching the users!', { autoClose: 3000 });
       console.error('There was an error fetching the users!', error);
     }
   };
@@ -50,7 +50,7 @@ export default function Dashboard({ searchCriteria }) {
 
   return (
     <div className="container mx-auto p-4">
-      <ToastContainer />
+      <ToastContainer autoClose={3000} />
       <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4">Dashboard</h2>
       <div className="mb-4">
         <label htmlFor="desiredFloor" className="block text-xl md:text-2xl font-bold leading-8 text-gray-900">
