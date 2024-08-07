@@ -27,6 +27,9 @@ export default function Form({ onSearch }) {
     if (!formData.email.match(/^[a-zA-Z0-9._%+-]+@bennett\.edu\.in$/)) {
       newErrors.email = 'Email must end with @bennett.edu.in';
     }
+    if (!formData.phoneNo.match(/^\d{10}$/)) {
+      newErrors.phoneNo = 'Phone number must be 10 digits';
+    }
     return newErrors;
   };
 
@@ -34,9 +37,9 @@ export default function Form({ onSearch }) {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
-      setErrorMessage(errors.email);
+      setErrorMessage(errors.email || errors.phoneNo);
       toast.dismiss();
-      toast.error(errors.email);
+      toast.error(errors.email || errors.phoneNo);
       return;
     }
     try {
@@ -51,13 +54,10 @@ export default function Form({ onSearch }) {
       });
     } catch (error) {
       toast.dismiss();
-      if (error.response && error.response.status === 400) {
-        setErrorMessage(error.response.data.message);
-        toast.error(error.response.data.message);
-      } else {
-        toast.error('There was an error submitting the form!');
-        console.error('There was an error submitting the form!', error);
-      }
+      const errorMessage = error.response?.data?.message || 'There was an error submitting the form!';
+      setErrorMessage(errorMessage);
+      toast.error(errorMessage);
+      console.error('There was an error submitting the form!', error);
     }
   };
 
@@ -119,7 +119,7 @@ export default function Form({ onSearch }) {
               <input
                 id="phoneNo"
                 name="phoneNo"
-                type="number"
+                type="text"
                 required
                 value={formData.phoneNo}
                 onChange={handleChange}
