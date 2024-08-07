@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 export default function Form({ onSearch }) {
   const [formData, setFormData] = useState({
@@ -38,17 +36,11 @@ export default function Form({ onSearch }) {
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
       setErrorMessage(errors.email);
-      toast.dismiss();
-      toast.error(errors.email, { autoClose: 3000 });
       return;
     }
 
     try {
-      toast.dismiss();
-      toast.info('Submitting form...', { autoClose: 2000 });
       await axios.post('https://rs-backend.vercel.app/submit', formData);
-      toast.dismiss();
-      toast.success('Form submitted successfully', { autoClose: 3000 });
 
       // Clear form data after successful submission
       setFormData({
@@ -69,12 +61,10 @@ export default function Form({ onSearch }) {
         });
       }
     } catch (error) {
-      toast.dismiss();
       if (error.response && error.response.status === 400) {
         setErrorMessage(error.response.data.message);
-        toast.error(error.response.data.message, { autoClose: 3000 });
       } else {
-        toast.error('There was an error submitting the form!', { autoClose: 3000 });
+        setErrorMessage('There was an error submitting the form!');
         console.error('There was an error submitting the form!', error);
       }
     }
@@ -82,7 +72,6 @@ export default function Form({ onSearch }) {
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <ToastContainer autoClose={3000} />
       <div className="mx-auto w-full max-w-sm">
         <img
           alt="RoomSearch.com"
