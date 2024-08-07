@@ -31,7 +31,7 @@ export default function Form({ onSearch }) {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
     const errors = validateForm();
     if (Object.keys(errors).length > 0) {
@@ -40,6 +40,7 @@ export default function Form({ onSearch }) {
     }
 
     try {
+      // No toast notifications
       await axios.post('https://rs-backend.vercel.app/submit', formData);
 
       // Clear form data after successful submission
@@ -52,7 +53,7 @@ export default function Form({ onSearch }) {
         desiredHostelBlock: '',
         desiredFloor: ''
       });
-
+      
       // Call the onSearch callback if provided
       if (onSearch) {
         onSearch({
