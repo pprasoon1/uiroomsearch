@@ -17,7 +17,7 @@ const Proceed = () => {
       <div
         className='fixed top-0 left-0 w-full h-full bg-cover bg-center z-[-1]'
         style={{ 
-          backgroundImage: 'url(/bg4.jpg)', 
+          backgroundImage: 'url(/bg1.jpg)', 
           backgroundAttachment: 'fixed', 
           backgroundRepeat: 'repeat', 
           backgroundSize: 'cover' 
