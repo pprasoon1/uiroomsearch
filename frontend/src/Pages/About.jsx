@@ -25,15 +25,15 @@ const ContactUs = () => {
           <h1 className="text-4xl font-bold text-gray-900 text-center mb-6">Contact Us</h1>
           <div className="text-center">
             <div className="mb-6">
-              <p className="text-2xl font-bold text-gray-900">Khushwant Mali</p>
-              <p className="text-xl text-zinc-900">Phone: 6367326706</p>
-              <p className="text-xl text-zinc-900">LinkedIn: <a href="https://www.linkedin.com/in/khushwant-mali-636b26276" className="text-red-900 underline">https://www.linkedin.com/in/khushwant-mali-636b26276</a></p>
+              <p className="text-2xl font-bold text-gray-900">Pranay Prasoon</p>
+              <p className="text-xl text-zinc-900">Phone: 8824446045</p>
+              <p className="text-xl text-zinc-900">LinkedIn: <a href="https://www.linkedin.com/in/pprasoon01/" className="text-red-900 underline" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/pprasoon01/</a></p>
             </div>
-           /* <div className="mb-6">
-              <p className="text-2xl font-bold text-gray-900">Ayush Singh</p>
-              <p className="text-xl text-zinc-900">Phone: 9625298815</p>
-              <p className="text-xl text-zinc-900">LinkedIn: <a href="https://www.linkedin.com/in/ayush-singh-26b6a7293/" className="text-red-900 underline">https://www.linkedin.com/in/ayush-singh-26b6a7293/</a></p>
-            </div> */
+            <div className="mb-6">
+              <p className="text-2xl font-bold text-gray-900">Aryan Patel</p>
+              <p className="text-xl text-zinc-900">Phone: 8817839559</p>
+              <p className="text-xl text-zinc-900">LinkedIn: <a href="https://www.linkedin.com/in/-aryan-patel/" className="text-red-900 underline" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/-aryan-patel/</a></p>
+            </div> 
             <div className="text-lg text-zinc-900 mb-6">
               Contact us at: <a href="mailto:contact@roomsearch.com" className="text-red-900 underline">contact@roomsearch.com</a>
             </div>
